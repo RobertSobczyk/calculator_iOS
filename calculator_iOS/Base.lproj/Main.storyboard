@@ -5,12 +5,15 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Helvetica.ttc">
             <string>Helvetica</string>
+            <string>Helvetica-Light</string>
         </array>
     </customFonts>
     <scenes>
@@ -22,23 +25,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4r-mm-r5a" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="6" y="574" width="175" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4r-mm-r5a" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="574" width="165" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="SqI-hK-NSQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="0          ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7UD-HE-dxG"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqs-g7-u9J" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="288" y="574" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqs-g7-u9J" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="284" y="574" width="76" height="76"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="=">
@@ -46,55 +53,60 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orh-bJ-R8L" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="194" y="574" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orh-bJ-R8L" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="194" y="574" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title=",">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9M-tZ-NXk" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="6" y="480" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9M-tZ-NXk" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="484" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="OUH-1m-XeI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fdQ-TV-Q6g"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd2-uO-GKW" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="100" y="480" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd2-uO-GKW" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="105" y="484" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OiU-qG-LCv"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPU-uD-u4i" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="288" y="480" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPU-uD-u4i" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="284" y="484" width="76" height="76"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="+">
@@ -102,14 +114,13 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKP-4T-FcY" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="194" y="480" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKP-4T-FcY" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="194" y="484" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="3">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,41 +131,50 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Af-wX-Vc2"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VlE-tl-gaB" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="6" y="386" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VlE-tl-gaB" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="394" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="5gQ-1e-ljB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="4">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Re3-nX-4VU"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEu-wC-kah" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="100" y="386" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEu-wC-kah" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="105" y="394" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="5">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1il-fo-gQG"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orN-yK-jc7" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="288" y="386" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orN-yK-jc7" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="284" y="394" width="76" height="76"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="−">
@@ -162,55 +182,63 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmM-fR-MGt" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="194" y="386" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZmM-fR-MGt" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="194" y="394" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="6">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LCl-yP-P14"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDZ-Qg-IH8" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="6" y="292" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDZ-Qg-IH8" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="304" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="Y09-qE-4dh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="7">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J1I-t9-SRr"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYT-cs-KUa" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="100" y="292" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QYT-cs-KUa" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="105" y="304" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="8">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ias-gn-nvU"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqW-7c-gfo" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="288" y="292" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZqW-7c-gfo" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="284" y="304" width="76" height="76"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="×">
@@ -218,55 +246,61 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivp-gI-lF3" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="194" y="292" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivp-gI-lF3" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="194" y="304" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="9">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="numbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FPe-IL-e3E"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtF-0k-zjf" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="6" y="198" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtF-0k-zjf" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="214" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="RUI-Xb-Rfm"/>
+                                    <constraint firstAttribute="height" constant="76" id="gLc-bV-7N4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="C">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ior-iC-R6X" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="100" y="198" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ior-iC-R6X" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="105" y="214" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="WHa-07-DXa"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="+/−">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7P-3h-3hS" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="288" y="198" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7P-3h-3hS" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="284" y="214" width="76" height="76"/>
                                 <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="÷">
@@ -274,28 +308,114 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iog-bF-LLJ" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
-                                <rect key="frame" x="194" y="198" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iog-bF-LLJ" customClass="RoundButton" customModule="calculator_iOS" customModuleProvider="target">
+                                <rect key="frame" x="194" y="214" width="76" height="76"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="79V-6V-XEH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="35"/>
                                 <state key="normal" title="%">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="40"/>
+                                        <real key="value" value="38"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7G-KR-4e0">
+                                <rect key="frame" x="15" y="82" width="344" height="124"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="80"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="EtF-0k-zjf" firstAttribute="baseline" secondItem="Ior-iC-R6X" secondAttribute="firstBaseline" id="0tK-Jh-sEJ"/>
+                            <constraint firstItem="VlE-tl-gaB" firstAttribute="top" secondItem="CEu-wC-kah" secondAttribute="top" id="1FK-Z9-MjW"/>
+                            <constraint firstItem="Ior-iC-R6X" firstAttribute="baseline" secondItem="Iog-bF-LLJ" secondAttribute="firstBaseline" id="1rZ-EW-YfC"/>
+                            <constraint firstItem="ZmM-fR-MGt" firstAttribute="trailing" secondItem="dKP-4T-FcY" secondAttribute="trailing" id="22u-sO-7bu"/>
+                            <constraint firstItem="orh-bJ-R8L" firstAttribute="top" secondItem="pqs-g7-u9J" secondAttribute="top" id="3dq-vh-MP5"/>
+                            <constraint firstItem="Iog-bF-LLJ" firstAttribute="trailing" secondItem="ivp-gI-lF3" secondAttribute="trailing" id="4NH-9t-9gl"/>
+                            <constraint firstItem="QYT-cs-KUa" firstAttribute="baseline" secondItem="ivp-gI-lF3" secondAttribute="firstBaseline" id="55T-xi-LM7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h4r-mm-r5a" secondAttribute="bottom" constant="17" id="6WP-XO-a2s"/>
+                            <constraint firstItem="MPU-uD-u4i" firstAttribute="trailing" secondItem="pqs-g7-u9J" secondAttribute="trailing" id="75u-zc-u5J"/>
+                            <constraint firstItem="L9M-tZ-NXk" firstAttribute="top" secondItem="VlE-tl-gaB" secondAttribute="bottom" constant="14" id="7gd-s8-iTF"/>
+                            <constraint firstItem="ivp-gI-lF3" firstAttribute="baseline" secondItem="ZqW-7c-gfo" secondAttribute="firstBaseline" id="7jR-NZ-018"/>
+                            <constraint firstItem="ZmM-fR-MGt" firstAttribute="baseline" secondItem="orN-yK-jc7" secondAttribute="firstBaseline" id="APG-qM-FRV"/>
+                            <constraint firstItem="ivp-gI-lF3" firstAttribute="top" secondItem="ZqW-7c-gfo" secondAttribute="top" id="AaE-MV-x2Y"/>
+                            <constraint firstItem="ZmM-fR-MGt" firstAttribute="top" secondItem="orN-yK-jc7" secondAttribute="top" id="CHx-CQ-pA3"/>
+                            <constraint firstItem="Kd2-uO-GKW" firstAttribute="top" secondItem="dKP-4T-FcY" secondAttribute="top" id="CN7-Sf-lvW"/>
+                            <constraint firstItem="EtF-0k-zjf" firstAttribute="top" secondItem="Y7G-KR-4e0" secondAttribute="bottom" constant="8" symbolic="YES" id="Ct3-dP-UHX"/>
+                            <constraint firstItem="Y7G-KR-4e0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="D4L-3T-ZbT"/>
+                            <constraint firstItem="dKP-4T-FcY" firstAttribute="leading" secondItem="orh-bJ-R8L" secondAttribute="leading" id="EPh-C4-hTj"/>
+                            <constraint firstItem="Ior-iC-R6X" firstAttribute="trailing" secondItem="QYT-cs-KUa" secondAttribute="trailing" id="FLM-HG-LCy"/>
+                            <constraint firstItem="orh-bJ-R8L" firstAttribute="baseline" secondItem="pqs-g7-u9J" secondAttribute="firstBaseline" id="G05-xg-K6m"/>
+                            <constraint firstItem="VlE-tl-gaB" firstAttribute="trailing" secondItem="L9M-tZ-NXk" secondAttribute="trailing" id="H8r-j1-7HY"/>
+                            <constraint firstItem="QYT-cs-KUa" firstAttribute="leading" secondItem="CEu-wC-kah" secondAttribute="leading" id="HN4-HM-W27"/>
+                            <constraint firstItem="Iog-bF-LLJ" firstAttribute="baseline" secondItem="r7P-3h-3hS" secondAttribute="firstBaseline" id="KIa-8y-mCc"/>
+                            <constraint firstItem="Iog-bF-LLJ" firstAttribute="top" secondItem="r7P-3h-3hS" secondAttribute="top" id="KSz-wP-CS5"/>
+                            <constraint firstItem="ivp-gI-lF3" firstAttribute="trailing" secondItem="ZmM-fR-MGt" secondAttribute="trailing" id="Kq9-bC-5IT"/>
+                            <constraint firstItem="QYT-cs-KUa" firstAttribute="trailing" secondItem="CEu-wC-kah" secondAttribute="trailing" id="LzZ-OF-cXt"/>
+                            <constraint firstItem="L9M-tZ-NXk" firstAttribute="baseline" secondItem="Kd2-uO-GKW" secondAttribute="firstBaseline" id="O7l-XH-p40"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r7P-3h-3hS" secondAttribute="trailing" constant="15" id="Olj-PU-m2Z"/>
+                            <constraint firstItem="dDZ-Qg-IH8" firstAttribute="top" secondItem="EtF-0k-zjf" secondAttribute="bottom" constant="14" id="QID-iS-2yS"/>
+                            <constraint firstItem="r7P-3h-3hS" firstAttribute="trailing" secondItem="ZqW-7c-gfo" secondAttribute="trailing" id="QIO-gD-i7m"/>
+                            <constraint firstItem="dDZ-Qg-IH8" firstAttribute="leading" secondItem="VlE-tl-gaB" secondAttribute="leading" id="QVT-tg-nB9"/>
+                            <constraint firstItem="orN-yK-jc7" firstAttribute="leading" secondItem="MPU-uD-u4i" secondAttribute="leading" id="RdK-j0-sHT"/>
+                            <constraint firstItem="Ior-iC-R6X" firstAttribute="top" secondItem="Iog-bF-LLJ" secondAttribute="top" id="SJP-WO-cvD"/>
+                            <constraint firstItem="EtF-0k-zjf" firstAttribute="leading" secondItem="dDZ-Qg-IH8" secondAttribute="leading" id="UXv-lI-sni"/>
+                            <constraint firstItem="VlE-tl-gaB" firstAttribute="top" secondItem="dDZ-Qg-IH8" secondAttribute="bottom" constant="14" id="VKe-qF-lUx"/>
+                            <constraint firstItem="dDZ-Qg-IH8" firstAttribute="baseline" secondItem="QYT-cs-KUa" secondAttribute="firstBaseline" id="VYm-ce-p4P"/>
+                            <constraint firstItem="orN-yK-jc7" firstAttribute="trailing" secondItem="MPU-uD-u4i" secondAttribute="trailing" id="XjX-6J-ukv"/>
+                            <constraint firstItem="EtF-0k-zjf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YTq-6G-g4R"/>
+                            <constraint firstItem="QYT-cs-KUa" firstAttribute="top" secondItem="ivp-gI-lF3" secondAttribute="top" id="Yji-hC-b8Z"/>
+                            <constraint firstItem="h4r-mm-r5a" firstAttribute="baseline" secondItem="orh-bJ-R8L" secondAttribute="baseline" id="YvY-o1-8zL"/>
+                            <constraint firstItem="ivp-gI-lF3" firstAttribute="leading" secondItem="ZmM-fR-MGt" secondAttribute="leading" id="Z7e-Wj-LkJ"/>
+                            <constraint firstItem="L9M-tZ-NXk" firstAttribute="top" secondItem="Kd2-uO-GKW" secondAttribute="top" id="aZK-TK-zfs"/>
+                            <constraint firstItem="Y7G-KR-4e0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="62" id="bWJ-Ak-DyP"/>
+                            <constraint firstItem="CEu-wC-kah" firstAttribute="leading" secondItem="Kd2-uO-GKW" secondAttribute="leading" id="coI-rd-OGh"/>
+                            <constraint firstItem="L9M-tZ-NXk" firstAttribute="leading" secondItem="h4r-mm-r5a" secondAttribute="leading" id="d6u-pz-AHJ"/>
+                            <constraint firstItem="pqs-g7-u9J" firstAttribute="baseline" secondItem="orh-bJ-R8L" secondAttribute="firstBaseline" id="dIx-Lr-1KV"/>
+                            <constraint firstItem="Ior-iC-R6X" firstAttribute="leading" secondItem="QYT-cs-KUa" secondAttribute="leading" id="e5O-MU-0Lu"/>
+                            <constraint firstItem="Kd2-uO-GKW" firstAttribute="baseline" secondItem="dKP-4T-FcY" secondAttribute="firstBaseline" id="eZf-mr-JEa"/>
+                            <constraint firstItem="Ior-iC-R6X" firstAttribute="leading" secondItem="EtF-0k-zjf" secondAttribute="trailing" constant="13" id="fvA-W6-7PT"/>
+                            <constraint firstItem="dDZ-Qg-IH8" firstAttribute="trailing" secondItem="VlE-tl-gaB" secondAttribute="trailing" id="gSP-vI-O3J"/>
+                            <constraint firstItem="Kd2-uO-GKW" firstAttribute="trailing" secondItem="h4r-mm-r5a" secondAttribute="trailing" id="h5X-gT-QA4"/>
+                            <constraint firstItem="h4r-mm-r5a" firstAttribute="top" secondItem="orh-bJ-R8L" secondAttribute="top" id="hRf-aR-SrY"/>
+                            <constraint firstItem="dDZ-Qg-IH8" firstAttribute="top" secondItem="QYT-cs-KUa" secondAttribute="top" id="hfP-Q3-9Zj"/>
+                            <constraint firstItem="EtF-0k-zjf" firstAttribute="top" secondItem="Ior-iC-R6X" secondAttribute="top" id="igH-Sv-Hah"/>
+                            <constraint firstItem="r7P-3h-3hS" firstAttribute="leading" secondItem="ZqW-7c-gfo" secondAttribute="leading" id="j8v-yB-Vh9"/>
+                            <constraint firstItem="ZqW-7c-gfo" firstAttribute="trailing" secondItem="orN-yK-jc7" secondAttribute="trailing" id="jW3-w5-Eq7"/>
+                            <constraint firstItem="ZqW-7c-gfo" firstAttribute="leading" secondItem="orN-yK-jc7" secondAttribute="leading" id="klr-D1-b5Y"/>
+                            <constraint firstItem="Iog-bF-LLJ" firstAttribute="leading" secondItem="ivp-gI-lF3" secondAttribute="leading" id="nNM-Q7-HZX"/>
+                            <constraint firstItem="Iog-bF-LLJ" firstAttribute="leading" secondItem="Ior-iC-R6X" secondAttribute="trailing" constant="13" id="nYX-OY-mXL"/>
+                            <constraint firstItem="dKP-4T-FcY" firstAttribute="trailing" secondItem="orh-bJ-R8L" secondAttribute="trailing" id="nm5-tV-yOR"/>
+                            <constraint firstItem="CEu-wC-kah" firstAttribute="top" secondItem="ZmM-fR-MGt" secondAttribute="top" id="pWv-JM-UY1"/>
+                            <constraint firstItem="VlE-tl-gaB" firstAttribute="baseline" secondItem="CEu-wC-kah" secondAttribute="firstBaseline" id="pph-iV-wFY"/>
+                            <constraint firstItem="h4r-mm-r5a" firstAttribute="top" secondItem="L9M-tZ-NXk" secondAttribute="bottom" constant="14" id="sXl-bU-ZAg"/>
+                            <constraint firstItem="ZmM-fR-MGt" firstAttribute="leading" secondItem="dKP-4T-FcY" secondAttribute="leading" id="tB6-Mv-QSl"/>
+                            <constraint firstItem="CEu-wC-kah" firstAttribute="trailing" secondItem="Kd2-uO-GKW" secondAttribute="trailing" id="tc1-Cs-RcJ"/>
+                            <constraint firstItem="VlE-tl-gaB" firstAttribute="leading" secondItem="L9M-tZ-NXk" secondAttribute="leading" id="uBB-8N-n6C"/>
+                            <constraint firstItem="CEu-wC-kah" firstAttribute="baseline" secondItem="ZmM-fR-MGt" secondAttribute="firstBaseline" id="uV9-82-Gq9"/>
+                            <constraint firstItem="dKP-4T-FcY" firstAttribute="top" secondItem="MPU-uD-u4i" secondAttribute="top" id="uvV-HU-XtF"/>
+                            <constraint firstItem="EtF-0k-zjf" firstAttribute="trailing" secondItem="dDZ-Qg-IH8" secondAttribute="trailing" id="uwC-Gs-Iwe"/>
+                            <constraint firstItem="dKP-4T-FcY" firstAttribute="baseline" secondItem="MPU-uD-u4i" secondAttribute="firstBaseline" id="w2f-P3-mwd"/>
+                            <constraint firstItem="MPU-uD-u4i" firstAttribute="leading" secondItem="pqs-g7-u9J" secondAttribute="leading" id="xXN-nc-ojg"/>
+                            <constraint firstItem="r7P-3h-3hS" firstAttribute="leading" secondItem="Iog-bF-LLJ" secondAttribute="trailing" constant="14" id="xd5-ha-lxg"/>
+                            <constraint firstItem="Y7G-KR-4e0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-1" id="zl7-9w-sNr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="Y7G-KR-4e0" id="ZM3-zp-NgK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
